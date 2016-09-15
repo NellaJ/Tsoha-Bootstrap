@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Muokkaussivu </h1>
+<h2> <small>Muokkaa mutaation tietoja</small></h2>
+
+<div class="form-group">
+    <label>Geeni</label>
+    <input class="form-control" value="LDLR" type="text">
+</div>
+<div class="form-group">
+    <label>Mutaatio</label>
+    <input class="form-control" value="Gly823Asp" type="text">
+</div>
+<div class="form-group">
+    <label>Sairaus</label>
+    <input class="form-control" value="FH" type="text">
+</div>
+<div class="form-group">
+    <label>Mutaation tyyppi</label>
+    <input class="form-control" value="Patogeeninen" type="text">
+</div>
+
+<button type="button" class="btn btn-success">Tallenna</button>
+<button type="button" class="btn btn-default">Peruuta</button>
+
+{% endblock %}

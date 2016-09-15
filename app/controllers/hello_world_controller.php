@@ -14,28 +14,28 @@
         View::make('helloworld.html');
     }
     
-    public static function Esittely(){
-        View::make('suunnitelmat/Esittely.html');
+    public static function esittely(){
+        View::make('suunnitelmat/esittely.html');
     }
     
-    public static function Hakusivu() {
-        View::make('suunnitelmat/Hakusivu.html');
+    public static function hakusivu() {
+        View::make('suunnitelmat/hakusivu.html');
     }
     
-    public static function Hakutulossivu() {
-        View::make('suunnitelmat/Hakutulossivu.html');
+    public static function hakutulossivu() {
+        View::make('suunnitelmat/hakutulossivu.html');
     }
     
-    public static function Kirjautumissivu() {
-        View::make('suunnitelmat/Kirjautumissivu.html');
+    public static function kirjautumissivu() {
+        View::make('suunnitelmat/kirjautumissivu.html');
     }
     
-    public static function Muokkaussivu() {
-        View::make('suunnitelmat/Muokkaussivu.html');
+    public static function muokkaussivu() {
+        View::make('suunnitelmat/muokkaussivu.html');
     }
     
-    public static function Rekisteroitymissivu() {
-        View::make('suunnitelmat/Rekisteroitymissivu.html');
+    public static function rekisteroitymissivu() {
+        View::make('suunnitelmat/rekisteroitymissivu.html');
     }
   }
   

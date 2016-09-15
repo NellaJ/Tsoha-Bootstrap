@@ -8,26 +8,26 @@
     HelloWorldController::sandbox();
   });
   
-  $routes->get('/Esittely', function() {
-    HelloWorldController::Esittely();
+  $routes->get('/esittely', function() {
+    HelloWorldController::esittely();
   });
   
-  $routes->get('/Hakusivu', function() {
-    HelloWorldController::Hakusivu();
+  $routes->get('/hakusivu', function() {
+    HelloWorldController::hakusivu();
   });
   
-  $routes->get('/Hakutulossivu', function() {
-    HelloWorldController::Hakutulossivu();
+  $routes->get('/hakutulossivu', function() {
+    HelloWorldController::hakutulossivu();
   });
   
-  $routes->get('/Kirjautumissivu', function() {
-    HelloWorldController::Kirjautumissivu();
+  $routes->get('/kirjautumissivu', function() {
+    HelloWorldController::kirjautumissivu();
   });
   
-  $routes->get('/Muokkaussivu', function() {
-    HelloWorldController::Muokkaussivu();
+  $routes->get('/muokkaussivu', function() {
+    HelloWorldController::muokkaussivu();
   });
   
-  $routes->get('/Rekisteroitymissivu', function() {
-    HelloWorldController::Rekisteroitymissivu();
+  $routes->get('/rekisteroitymissivu', function() {
+    HelloWorldController::rekisteroitymissivu();
   });

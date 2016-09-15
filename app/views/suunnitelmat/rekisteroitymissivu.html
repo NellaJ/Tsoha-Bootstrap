@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Rekisteröidy! </h1>
+
+<!-- Lomakekenttiä henkilön tiedoille -->
+<form>
+    <div class="form-group">
+        <label>Etunimi</label>
+        <input class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label>Sukunimi</label>
+        <input class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input class="form-control" type="email">
+    </div>
+    <div class="form-group">
+        <label>Käyttäjätunnus</label>
+        <input class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label>Salasana</label>
+        <input class="form-control" type="password">
+    </div>
+    
+    <button type="button" class="btn btn-success">Rekisteröidy</button>
+</form>
+
+{% endblock %}
