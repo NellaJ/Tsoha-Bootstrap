@@ -16,8 +16,8 @@
     HelloWorldController::hakusivu();
   });
   
-  $routes->get('/hakutulossivu', function() {
-    HelloWorldController::hakutulossivu();
+  $routes->get('/geenitulossivu', function() {
+    HelloWorldController::geenitulossivu();
   });
   
   $routes->get('/kirjautumissivu', function() {
@@ -30,4 +30,12 @@
   
   $routes->get('/rekisteroitymissivu', function() {
     HelloWorldController::rekisteroitymissivu();
+  });
+  
+  $routes->get('/sairaustulossivu', function() {
+    HelloWorldController::sairaustulossivu();
+  });
+
+   $routes->get('/mutaatiotulossivu', function() {
+    HelloWorldController::mutaatiotulossivu();
   });

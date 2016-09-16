@@ -22,8 +22,8 @@
         View::make('suunnitelmat/hakusivu.html');
     }
     
-    public static function hakutulossivu() {
-        View::make('suunnitelmat/hakutulossivu.html');
+    public static function geenitulossivu() {
+        View::make('suunnitelmat/geenitulossivu.html');
     }
     
     public static function kirjautumissivu() {
@@ -36,6 +36,12 @@
     
     public static function rekisteroitymissivu() {
         View::make('suunnitelmat/rekisteroitymissivu.html');
+    }
+    public static function sairaustulossivu() {
+        View::make('suunnitelmat/sairaustulossivu.html');
+    }
+    public static function mutaatiotulossivu() {
+        View::make('suunnitelmat/mutaatiotulossivu.html');
     }
   }
   
