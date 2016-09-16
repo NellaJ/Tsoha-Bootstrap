@@ -5,13 +5,14 @@ salasana varchar(50) NOT NULL,
 email varchar(50) NOT NULL
 );
 
-CREATE TABLE Yllapitaja(
-id SERIAL PRIMARY KEY,
-nimi varchar(50) NOT NULL,
-salasana varchar(50) NOT NULL,
-email varchar(50) NOT NULL
-);
-
+--Näkyy nettisivulla, vanhasta jäänyt
+--CREATE TABLE Yllapitaja(
+--id SERIAL PRIMARY KEY,
+--nimi varchar(50) NOT NULL,
+--salasana varchar(50) NOT NULL,
+--email varchar(50) NOT NULL
+--);
+--Sairaus-Geeni-osaston yhdistäminen vielä auki
 CREATE TABLE Sairaus(
 id SERIAL PRIMARY KEY,
 nimi varchar(50) NOT NULL,
@@ -28,12 +29,12 @@ sairaudet text,
 lisayspvm date NOT NULL
 );
 
---Mutaatiotaulu ei ilmesty mihinkään :(
+--Mutaatiotaulu ei ilmesty mihinkään/ Nyt löytyy! :)
 CREATE TABLE Mutaatio(
 id SERIAL PRIMARY KEY,
 sijainti varchar(50) NOT NULL,
 tyyppi varchar(50) NOT NULL,
 lisayspvm date NOT NULL,
-geeni varchar(50) REFERENCES Geeni(nimi) NOT NULL,
-sairaus varchar(50) REFERENCES Sairaus(nimi) NOT NULL
+geeni INTEGER REFERENCES Geeni(id) NOT NULL,
+sairaus INTEGER REFERENCES Sairaus(id) NOT NULL
 );
