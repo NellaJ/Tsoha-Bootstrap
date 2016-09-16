@@ -28,6 +28,7 @@ sairaudet text,
 lisayspvm date NOT NULL
 );
 
+--Mutaatiotaulu ei ilmesty mihinkään :(
 CREATE TABLE Mutaatio(
 id SERIAL PRIMARY KEY,
 sijainti varchar(50) NOT NULL,

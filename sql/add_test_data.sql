@@ -1,10 +1,10 @@
-INSERT INTO Kayttaja (nimi, salasana) VALUES ('Pena', 'abc33')
-INSERT INTO Kayttaja (nimi, salasana) VALUES ('Sanna', 'password')
+INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Pena', 'abc33', 'a@b.fi');
+INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Sanna', 'password', 'email');
 
-INSERT INTO Yllapitaja (nimi, salasana) VALUES ('Timppa', '7ye7')
+INSERT INTO Yllapitaja (nimi, salasana, email) VALUES ('Timppa', '7ye7', 'ab@h.fi');
 
-INSERT INTO Sairaus (nimi, lisayspvm) VALUES ('Lorvikatarri', '0909')
+INSERT INTO Sairaus (nimi, lisayspvm) VALUES ('Lorvikatarri', '090906');
 
-INSERT INTO Geeni (nimi, lisayspvm) VALUES ('SHH', '12122014')
+INSERT INTO Geeni (nimi, lisayspvm) VALUES ('SHH', '121214');
 
-INSERT INTO Mutaatio (sijainti, tyyppi) VALUES ('A313K', 'Harmiton')
+--Ei nää näy missään, vaikka erroreita ei tule
