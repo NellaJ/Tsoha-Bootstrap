@@ -8,8 +8,11 @@ Yleisiä linkkejä:
   * [Linkki rekisteröitymisnäkymään](https://junna.users.cs.helsinki.fi/tsoha/rekisteroitymissivu)
   * [Linkki muokkausnäkymään](https://junna.users.cs.helsinki.fi/tsoha/muokkaussivu)
   * [Linkki hakusivunäkymään](https://junna.users.cs.helsinki.fi/tsoha/hakusivu)
-  * [Linkki hakutulosnäkymään](https://junna.users.cs.helsinki.fi/tsoha/hakutulossivu)
-* [Linkki dokumentaatiooni](https://github.com/NellaJ/Tsoha-Bootstrap/blob/master/doc/Dokumentaatio.pdf.pdf)
+  * [Linkki geenin hakutulosnäkymään](http://junna.users.cs.helsinki.fi/tsoha/geenitulossivu)
+  * [Linkki sairauden hakutulosnäkymään](http://junna.users.cs.helsinki.fi/tsoha/sairaustulossivu)
+  * [Linkki mutaation tietosivunäkymään](http://junna.users.cs.helsinki.fi/tsoha/mutaatiotulossivu)
+
+* [Linkki dokumentaatiooni](https://github.com/NellaJ/Tsoha-Bootstrap/blob/master/doc/Dokumentaatio2109.pdf)
 
 ## Työn aihe
 
