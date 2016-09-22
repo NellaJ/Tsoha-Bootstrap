@@ -1,0 +1,52 @@
+<?php
+
+class Geeni extends BaseModel{
+    //Attribuutit
+    public $id, $nimi, $mutaatiot, $sairaudet, $lisayspvm;
+    //Konstruktori
+    public function __construct($attributes) {
+        parent::__construct($attributes);
+    }
+    
+    public static function all(){
+        //Alustaminen
+        $query = DB::connection()->prepare('SELECT * FROM Geeni');
+        //Kyselyn suoritus
+        $query->execute();
+        //Kyselyn rivit, taulukko assosiaatiolistoja
+        //Sarakkeen nimi on avain, sisältö arvo
+        $rows = $query->fetchAll();
+        $geenit = array();
+        //Luupilla rivit läpi ja talteen
+        foreach ($rows as $row) {
+            $geenit[]=new Geeni(array(
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'mutaatiot' => $row['mutaatiot'],
+                'sairaudet' => $row['sairaudet'],
+                'lisayspvm' => $row['lisayspvm']
+            ));
+        }
+        return $geenit;
+    }
+    //Hakee geenin id:n perusteella
+    public static function find($id){
+        $query = DB::connection()->prepare('SELECT * FROM Geeni WHERE id = :id LIMIT 1');
+        $query->execute(array('id' => $id));
+        $row = $query->fetch();
+        
+        if($row){
+            $geeni = new Geeni(array(
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'mutaatiot' => $row['mutaatiot'],
+                'sairaudet' => $row['sairaudet'],
+                'lisayspvm' => $row['lisayspvm']
+            ));
+            return $geeni;
+        }
+        return null;
+    }
+}
+    
+

@@ -1,6 +1,6 @@
 <?php
 
-  class HelloWorldController extends BaseController{
+class HelloWorldController extends BaseController{
 
     public static function index(){
       // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
@@ -11,7 +11,12 @@
       // Testaa koodiasi täällä
      // echo 'Hello World!';
      // echo ' I made this!';
-        View::make('helloworld.html');
+       // View::make('helloworld.html');
+        $SHH = Geeni::find(1);
+        $geenit = Geeni::all();
+        Kint::dump($geenit);
+        Kint::dump($SHH);
+        //Toimii
     }
     
     public static function esittely(){
