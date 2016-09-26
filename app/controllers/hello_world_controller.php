@@ -1,22 +1,14 @@
 <?php
-
+//require 'app/models/geeni.php';
 class HelloWorldController extends BaseController{
 
     public static function index(){
-      // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
    	  echo 'Tämä on etusivu!';
     }
 
     public static function sandbox(){
       // Testaa koodiasi täällä
-     // echo 'Hello World!';
-     // echo ' I made this!';
-       // View::make('helloworld.html');
-        $SHH = geeni::find(1);
-        $geenit = geeni::all();
-        Kint::dump($geenit);
-        Kint::dump($SHH);
-        //Ei toimi?
+      View::make('helloworld.html');
     }
     
     public static function esittely(){

@@ -9,15 +9,10 @@ class Geeni extends BaseModel{
     }
     
     public static function all(){
-        //Alustaminen
         $query = DB::connection()->prepare('SELECT * FROM Geeni');
-        //Kyselyn suoritus
         $query->execute();
-        //Kyselyn rivit, taulukko assosiaatiolistoja
-        //Sarakkeen nimi on avain, sisältö arvo
         $rows = $query->fetchAll();
         $geenit = array();
-        //Luupilla rivit läpi ja talteen
         foreach ($rows as $row) {
             $geenit[]=new Geeni(array(
                 'id' => $row['id'],
@@ -53,7 +48,6 @@ class Geeni extends BaseModel{
         $query->execute(array('nimi'=> $this->nimi, 'mutaatiot'=>$this->mutaatiot, 'sairaudet'=>  $this->sairaudet, 'lisayspvm'=> $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
-        
     }
 }
     

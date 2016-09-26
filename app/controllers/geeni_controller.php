@@ -2,7 +2,7 @@
 
 class GeeniController extends BaseController{
     public static function index() {
-        //Hakee kaikki tietokannasta
+        //Hakee kaikki geenit tietokannasta
         $geenit = Geeni::all();
         View::make('geeni/index.html', array('geenit' => $geenit));
     }
@@ -16,12 +16,11 @@ class GeeniController extends BaseController{
                 'sairaudet' => $params['sairaudet'],
                 'lisayspvm' => $params['lisayspvm']
                 ));
-       
         $geeni-> save();
-        //Ohjaa jollekin sivulle Redirect jne.
+       //Ei oikeasti palaa minnekään kun ei mene minnekään
         Redirect::to('/geeni/'.$geeni->id, array('message'=> "Lisätty on"));
     }
-
+    //Tämä on turha tai ei toimi tai jotain?
     public static function create() {
         View::make('geeni/new.html');
     }

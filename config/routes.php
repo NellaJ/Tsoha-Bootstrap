@@ -51,7 +51,8 @@
    $routes->get('/geeni/new', function() {
    GeeniController::create();
    });
-           //Tästä valittaa Fatal erroria, create-metodia ei olemassa?
+   //Createsta valittaa Fatal erroria, ts. EI TOIMI!
+   //Seuraavakaan ei siis tee mitään
    $routes->get('/geeni/:id', function($id){
    GeeniController::show($id);
    });
