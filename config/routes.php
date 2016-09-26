@@ -39,3 +39,19 @@
    $routes->get('/mutaatiotulossivu', function() {
     HelloWorldController::mutaatiotulossivu();
   });
+    
+  $routes->get('/geeni', function() {
+    GeeniController::index();
+  });
+  
+   $routes->post('/geeni', function(){
+     GeeniController::store();   
+   });
+   
+   $routes->get('/geeni/new', function() {
+   GeeniController::create();
+   });
+           //Tästä valittaa Fatal erroria, create-metodia ei olemassa?
+   $routes->get('/geeni/:id', function($id){
+   GeeniController::show($id);
+   });

@@ -12,11 +12,11 @@ class HelloWorldController extends BaseController{
      // echo 'Hello World!';
      // echo ' I made this!';
        // View::make('helloworld.html');
-        $SHH = Geeni::find(1);
-        $geenit = Geeni::all();
+        $SHH = geeni::find(1);
+        $geenit = geeni::all();
         Kint::dump($geenit);
         Kint::dump($SHH);
-        //Toimii
+        //Ei toimi?
     }
     
     public static function esittely(){

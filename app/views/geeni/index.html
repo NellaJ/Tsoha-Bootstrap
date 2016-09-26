@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Geenit</h1>
+<!--Listaa kaikki tietokannassa olevat geenit -->
+<p>
+    <a href="{{base_path}}/geeni/new" class="btn btn-success">Lisää geeni</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nimi</th>
+            <th>Mutaatiot</th>
+            <th>Sairaudet</th>
+            <th>Lisätty (pvä)</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {% for geeni in geenit %}
+        <tr>
+            <td><a href="{{base_path}}/geeni/{{geeni.id}}">{{geeni.nimi}} </td>
+            <td>{{geeni.id}}</td>
+            <td>{{geeni.nimi}}</td>
+            <td>{{geeni.mutaatiot}}</td>
+            <td>{{geeni.sairaudet}}</td>
+            <td>{{geeni.lisayspvm}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

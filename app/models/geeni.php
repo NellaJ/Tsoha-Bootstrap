@@ -47,6 +47,14 @@ class Geeni extends BaseModel{
         }
         return null;
     }
+    
+    public function save() {
+        $query = DB::connection()->prepare('INSERT INTO Geeni (nimi, mutaatiot, sairaudet, lisayspvm) VALUES (:nimi, :mutaatiot, :sairaudet, :lisayspvm) RETURNING id');
+        $query->execute(array('nimi'=> $this->nimi, 'mutaatiot'=>$this->mutaatiot, 'sairaudet'=>  $this->sairaudet, 'lisayspvm'=> $this->lisayspvm));
+        $row = $query->fetch();
+        $this->id = $row['id'];
+        
+    }
 }
     
 
