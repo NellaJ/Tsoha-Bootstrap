@@ -28,7 +28,6 @@ class Geeni extends BaseModel {
         return $geenit;
     }
 
-    //Hakee geenin id:n perusteella
     public static function find($id) {
         $query = DB::connection()->prepare('SELECT * FROM Geeni WHERE id = :id LIMIT 1');
         $query->execute(array('id' => $id));

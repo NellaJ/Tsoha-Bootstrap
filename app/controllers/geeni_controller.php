@@ -27,7 +27,7 @@ class GeeniController extends BaseController {
         
         if(count($errors)==0){
         $geeni->save();
-        //Alla oleva rivi ei pelaa
+
         Redirect::to('/geeni/'. $geeni->id, array('message' => "Lisätty on"));
     
         }else{
@@ -37,8 +37,7 @@ class GeeniController extends BaseController {
 
     public static function show($id) {
         $geeni = Geeni::find($id);
-        View::make('geeni/:id', array('geeni' => $geeni));
-        //Ei toimi, ei aivokapasiteetti riitä tämän luomiseen ilmeisesti
+        View::make('geeni/geeni_show.html', array('geeni' => $geeni));
     }
     
     public static function edit($id){
