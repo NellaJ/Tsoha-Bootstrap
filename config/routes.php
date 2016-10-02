@@ -68,3 +68,20 @@ $routes->get('/sairaus/new', function() {
 $routes->post('/sairaus', function() {
     SairausController::store();
 });
+
+$routes->get('/geeni/:id/edit', function($id) {
+    GeeniController::edit($id);
+});
+$routes->post('/geeni/:id/edit', function($id) {
+    GeeniController::update($id);
+});
+$routes->post('/geeni/:id/destroy', function($id) {
+    GeeniController::destroy($id);
+});
+
+$routes->get('/login', function(){
+   UserController::login(); 
+});
+$routes->post('/login', function(){
+   UserController::handle_login(); 
+});

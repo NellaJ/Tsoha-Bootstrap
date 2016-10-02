@@ -9,6 +9,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Linkki</th>
             <th>id</th>
             <th>Nimi</th>
             <th>Mutaatiot</th>
@@ -16,7 +17,7 @@
             <th>Lisätty (pvä)</th>
         </tr>
     </thead>
-    
+
     <tbody>
         {% for geeni in geenit %}
         <tr>
@@ -26,6 +27,7 @@
             <td>{{geeni.mutaatiot}}</td>
             <td>{{geeni.sairaudet}}</td>
             <td>{{geeni.lisayspvm}}</td>
+            <td><a class="btn btn-default btn-sm" href="{{base_path}}/geeni/{{geeni.id}}/edit">Muokkaa</td>
         </tr>
         {% endfor %}
     </tbody>

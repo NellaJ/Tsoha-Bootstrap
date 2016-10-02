@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Muokkaussivu </h1>
+<h2> <small>Muokkaa geenin tietoja</small></h2>
+
+<form method="post" action="{{base_path}}/geeni">
+<div class="form-group">
+    <label>Nimi</label>
+    <input name ="nimi" class="form-control" value= "{{attributes.nimi}}" type="text">
+</div>
+<div class="form-group">
+    <label>Mutaatiot</label>
+    <input name="mutaatiot" class="form-control" value="{{attributes.mutaatiot}}" type="text">
+</div>
+<div class="form-group">
+    <label>Sairaudet</label>
+    <input name="sairaudet" class="form-control" value="{{attributes.sairaudet}}" type="text">
+</div>
+<div class="form-group">
+    <label>Pvm</label>
+    <input name="lisayspvm" class="form-control" value="{{attributes.lisayspvm}}" type="text">
+</div>
+
+<button type="button" class="btn btn-success">Tallenna</button>
+<button type="button" class="btn btn-default">Peruuta</button>
+</form>
+{% endblock %}

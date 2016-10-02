@@ -8,7 +8,15 @@ class HelloWorldController extends BaseController{
 
     public static function sandbox(){
       // Testaa koodiasi täällä
-      View::make('helloworld.html');
+      $diu = new Geeni(array(
+          'nimi' => '',
+          'mutaatiot' => 'aa',
+          'sairaudet' => 'oo',
+          'lisayspvm' => ''
+      ));
+      $errors = $diu->errors();
+      
+      Kint::dump($errors);
     }
     
     public static function esittely(){
