@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sairaudet</h1>
+<!--Listaa kaikki tietokannassa olevat sairaudet -->
+<p>
+    <a href="{{base_path}}/sairaus/new" class="btn btn-success">Lisää sairaus</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Nimi</th>
+            <th>Geenit</th>
+            <th>Mutaatiot</th>
+            <th>Lisätty (pvä)</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {% for sairaus in sairaudet %}
+        <tr>
+            <td><a href="{{base_path}}/sairaus/{{sairaus.id}}">{{sairaus.nimi}} </td>
+            <td>{{sairaus.id}}</td>
+            <td>{{sairaus.nimi}}</td>
+            <td>{{sairaus.geenit}}</td>
+            <td>{{sairaus.mutaatiot}}</td>
+            <td>{{sairaus.lisayspvm}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
