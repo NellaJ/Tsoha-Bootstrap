@@ -15,6 +15,7 @@ Yleisiä linkkejä:
 * [Linkki dokumentaatiooni](https://github.com/NellaJ/Tsoha-Bootstrap/blob/master/doc/Dokumentaatio2109.pdf)
 * [Linkki sivuun, jossa listataan kaikki tietokannan geenit](https://junna.users.cs.helsinki.fi/tsoha/geeni)
 
+Ei toimi juuri mikään, mm. kirjautuminen. Käyttöohjekin siis turha.
 
 ## Työn aihe
 
