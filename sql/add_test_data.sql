@@ -1,5 +1,5 @@
---INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Pena', 'abc33', 'a@b.fi');
---INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Sanna', 'password', 'email');
+--INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Testi', 'salasana', 'a@b.fi');
+--INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Tyyppi', 'password', 'email');
 
 --INSERT INTO Yllapitaja (nimi, salasana, email) VALUES ('Timppa', '7ye7', 'ab@h.fi');
 
