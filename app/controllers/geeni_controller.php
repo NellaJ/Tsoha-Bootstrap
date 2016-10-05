@@ -42,7 +42,7 @@ class GeeniController extends BaseController {
     
     public static function edit($id){
         $geeni = Geeni::find($id);
-        View::make('geeni/edit.html', array('attributes'=> $geeni));
+        View::make('geeni/geeni_edit.html', array('attributes'=> $geeni));
     }
     public static function update($id){
         $params = $POST_;
@@ -58,16 +58,17 @@ class GeeniController extends BaseController {
         $errors = $geeni->errors();
         
         if(count($errors)>0){
-            View::make('geeni/edit.html', array('errors'=>$errors, 'attributes'=>$attributes));
+            View::make('geeni/geeni_edit.html', array('errors'=>$errors, 'attributes'=>$attributes, 'geeni' =>$geeni));
         }else{
             $geeni->update();
-            Redirect::to('/geeni/'.$geeni->id, array('message'=>'Muokkaus onnistui'));
-        }
+            Redirect::to('/geeni/' . $geeni->id, array('message'=>'Muokkaus onnistui'));
+        }   
+        //Viesti ei näy!
     }
     public static function destroy($id){
         $geeni = new Geeni(array('id'=>$id));
-        $geeni->destroy();
+        $geeni->destroy($id);
         
-        Redirect::to('/geeni', array('message'=>'Poistettu!'));
+        Redirect::to('/geeni/index.html', array('message'=>'Poistettu!'));
     }
 }

@@ -53,14 +53,15 @@ class Geeni extends BaseModel {
         $this->id = $row['id'];
     }
 
-    public function update() {
-        $query = DB::connection()->prepare('UPDATE Geeni (nimi, mutaatiot, sairaudet, lisayspvm SET (:nimi, :mutaatiot, :sairaudet, :lisayspvm) WHERE ID = id');
-        $query->execute(array('nimi' => $this->nimi, 'mutaatiot' => $this->mutaatiot, 'sairaudet' => $this->sairaudet, 'lisayspvm' => $this->lisayspvm));
+    public function update($id) {
+        $query = DB::connection()->prepare('UPDATE Geeni SET nimi = :nimi, mutaatiot = :mutaatiot, sairaudet = :sairaudet, lisayspvm = :lisayspvm WHERE id=:id');
+        $query->execute(array('id' => $this->id, 'nimi' => $this->nimi, 'mutaatiot' => $this->mutaatiot, 'sairaudet' => $this->sairaudet, 'lisayspvm' => $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
+        
     }
 
-    public function destroy() {
+    public function destroy($id) {
         $query = DB::connection()->prepare('DELETE FROM Geeni WHERE id=:id');
         $query->execute(array('id' => $id));
     }
