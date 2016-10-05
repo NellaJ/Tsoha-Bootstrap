@@ -25,6 +25,7 @@ Oikeilla tunnuksilla kirjautuessa vie etusivulle (jossa ei ole mitään atm), mu
 Väärillä tunnuksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle. (Korjausyritykset epäonnistuivat)
 
 Tunnus: Testi
+
 Salasana: salasana
 
 ## Työn aihe
