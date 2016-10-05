@@ -15,13 +15,15 @@ Yleisiä linkkejä:
 * [Linkki dokumentaatiooni](https://github.com/NellaJ/Tsoha-Bootstrap/blob/master/doc/Dokumentaatio2109.pdf)
 
 * [Linkki sivuun, jossa listataan kaikki tietokannan geenit](https://junna.users.cs.helsinki.fi/tsoha/geeni)
+
 Lisää geeni-linkistä voi lisätä uuden.
 Muokkaa-napista periaatteessa voisi muokata olemassa olevaa, mutta se itseasiassa luo täysin uuden (korjaus ei onnistunut).
 Poista-nappi johtaa erroreihin, mutta myös poistaa kohteen (tämänkään korjaaminen ei onnistunut).
 
 * [Linkki kirjautumissivuun](http://junna.users.cs.helsinki.fi/tsoha/login)
 Oikeilla tunnuksilla kirjautuessa vie etusivulle (jossa ei ole mitään atm), mutta ei näytä tervetuloa-viestiä.
-Väärillä tunniksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle.
+Väärillä tunnuksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle. (Korjausyritykset epäonnistuivat)
+
 Tunnus: Testi
 Salasana: salasana
 
