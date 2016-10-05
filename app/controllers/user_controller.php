@@ -15,7 +15,9 @@ class UserController extends BaseController {
         }else{
             $_SESSION['kayttaja'] = $kayttaja->id;
             
-            Redirect::to('/', array('message'=> 'Päivää' . $kayttaja->nimi . '!'));
+            Redirect::to('/', array('message'=> 'Tervetuloa ' . $kayttaja->nimi . '!'));
+        
+            //Viesti ei näy!
         }
     }
 

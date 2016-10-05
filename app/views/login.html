@@ -2,11 +2,21 @@
 {% block content %}
 <h1> Kirjaudu sisään </h1>
 
+{% if errors %}
+<div class="alert alert-danger">
+    <!--Punakynää error-jutussa! -->
+    <ul>
+       {% for error in errors %}
+       <li>{{error}}</li>
+       {% endfor %}
+    </ul>
+</div>
+{% endif %}
 
 <form method="post" action="{{base_path}}/login">
     <div class="form-group">
         <label>Käyttäjätunnus</label>
-        <input class="form-control" name="nimi" value="{{nimi}}" type="text">
+        <input class="form-control" name="nimi" value="{{attributes.nimi}}" type="text">
     </div>
     
    <div class="form-group">

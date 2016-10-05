@@ -69,6 +69,6 @@ class GeeniController extends BaseController {
         $geeni = new Geeni(array('id'=>$id));
         $geeni->destroy($id);
         
-        Redirect::to('/geeni/index.html', array('message'=>'Poistettu!'));
+        Redirect::to('/geeni', array('message'=>'Poistettu!'));
     }
 }

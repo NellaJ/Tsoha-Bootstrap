@@ -43,7 +43,22 @@ $kayttajat[] = new Geeni(array(
 return $kayttajat;
 }
 
+public static function find($id) {
+        $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE id = :id LIMIT 1');
+        $query->execute(array('id' => $id));
+        $row = $query->fetch();
 
+        if ($row) {
+            $kayttaja = new Kayttaja(array(
+                'id' => $row['id'],
+                'nimi' => $row['nimi'],
+                'salasana' => $row['salasana'],
+                'email' => $row['email']
+            ));
+            return $kayttaja;
+        }
+        return null;
+    }
 
 //public function save() {
 //$query = DB::connection()->prepare('INSERT INTO Geeni (nimi, mutaatiot, sairaudet, lisayspvm) VALUES (:nimi, :mutaatiot, :sairaudet, :lisayspvm) RETURNING id');
