@@ -14,7 +14,7 @@ Poista-nappi poistaa kohteen.
 
 * [Linkki kirjautumissivuun](http://junna.users.cs.helsinki.fi/tsoha/login)
 Oikeilla tunnuksilla kirjautuessa vie etusivulle (jossa ei ole mitään atm), mutta ei näytä tervetuloa-viestiä.
-Väärillä tunnuksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle. (Korjausyritykset epäonnistuivat)
+Väärillä tunnuksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle. (Korjausyritykset epäonnistuivat). Kirjautuminen saattaa johtaa muihinkin häiriötiloihin.
 
 Tunnus: Testi
 
