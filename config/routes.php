@@ -44,21 +44,33 @@ $routes->get('/geeni', function() {
     GeeniController::index();
 });
 
+$routes->get('/geeni/:id/edit', function($id) {
+    GeeniController::edit($id);
+});
+$routes->post('/geeni/:id/edit', function($id) {
+    GeeniController::update($id);
+});
+
 $routes->get('/geeni/new', function() {
     GeeniController::create();
+});
+$routes->get('/geeni/:id', function($id) {
+    GeeniController::show($id);
 });
 
 $routes->post('/geeni', function() {
     GeeniController::store();
 });
 
-$routes->get('/geeni/:id', function($id) {
-    GeeniController::show($id);
+$routes->post('/geeni/:id/destroy', function($id) {
+    GeeniController::destroy($id);
 });
-
 
 $routes->get('/sairaus', function() {
     SairausController::index();
+});
+$routes->get('/sairaus/:id', function($id) {
+    SairausController::show($id);
 });
 
 $routes->get('/sairaus/new', function() {
@@ -69,19 +81,21 @@ $routes->post('/sairaus', function() {
     SairausController::store();
 });
 
-$routes->get('/geeni/:id/edit', function($id) {
-    GeeniController::edit($id);
-});
-$routes->post('/geeni/:id/edit', function($id) {
-    GeeniController::update($id);
-});
-$routes->post('/geeni/:id/destroy', function($id) {
-    GeeniController::destroy($id);
+$routes->get('/sairaus/:id/edit', function($id) {
+    SairausController::edit($id);
 });
 
-$routes->get('/login', function(){
-   UserController::login(); 
+$routes->post('/sairaus/:id/edit', function($id) {
+    SairausController::update($id);
 });
-$routes->post('/login', function(){
-   UserController::handle_login(); 
+
+$routes->post('/sairaus/:id/destroy', function($id) {
+    SairausController::destroy($id);
+});
+
+$routes->get('/login', function() {
+    UserController::login();
+});
+$routes->post('/login', function() {
+    UserController::handle_login();
 });

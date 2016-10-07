@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Sairaudet</h1>
-<!--Listaa kaikki tietokannassa olevat sairaudet -->
 <p>
     <a href="{{base_path}}/sairaus/new" class="btn btn-success">Lisää sairaus</a>
 </p>
@@ -9,11 +8,12 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Linkki</th>
             <th>id</th>
             <th>Nimi</th>
             <th>Geenit</th>
             <th>Mutaatiot</th>
-            <th>Lisätty (pvä)</th>
+            <th>Lisätty (pvm)</th>
         </tr>
     </thead>
     
@@ -26,7 +26,11 @@
             <td>{{sairaus.geenit}}</td>
             <td>{{sairaus.mutaatiot}}</td>
             <td>{{sairaus.lisayspvm}}</td>
-        </tr>
+            <td><a class="btn btn-primary" href="{{base_path}}/sairaus/{{sairaus.id}}/edit">Muokkaa</td>
+            <td><form method="post" action="{{base_path}}/sairaus/{{sairaus.id}}/destroy" style="display: inline-block">
+                    <button type="submit" class="btn btn-danger">Poista</button>
+                </form></td>
+                </tr>
         {% endfor %}
     </tbody>
 </table>

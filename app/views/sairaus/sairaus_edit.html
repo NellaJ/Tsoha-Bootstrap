@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h1>Lisää uusi sairaus</h1>
+<h1> Muokkaussivu </h1>
+<h2> <small>Muokkaa sairauden tietoja</small></h2>
 
 {% if errors %}
 <div class="alert alert-danger">
@@ -13,30 +13,25 @@
     </ul>
 </div>
 {% endif %}
-
 <form method="post" action="{{base_path}}/sairaus">
     <div class="form-group">
         <label>Nimi</label>
-        <input name="nimi" class="form-control" value="{{attributes.nimi}}" type="text">
+        <input name ="nimi" class="form-control" value= "{{attributes.nimi}}" type="text">
     </div>
-    
     <div class="form-group">
         <label>Geenit</label>
         <input name="geenit" class="form-control" value="{{attributes.geenit}}" type="text">
     </div>
-    
     <div class="form-group">
         <label>Mutaatiot</label>
         <input name="mutaatiot" class="form-control" value="{{attributes.mutaatiot}}" type="text">
     </div>
-    
     <div class="form-group">
         <label>Pvm</label>
         <input name="lisayspvm" class="form-control" value="{{attributes.lisayspvm}}" type="date">
     </div>
-    
-    <div class="form-group">
-        <button type="submit" class="btn-primary">Lisää</button>
-    </div>
-</form>
+
+    <button type="submit" class="btn btn-success">Tallenna</button>
+    <button type="submit" class="btn btn-default">Peruuta</button>
+  
 {% endblock %}

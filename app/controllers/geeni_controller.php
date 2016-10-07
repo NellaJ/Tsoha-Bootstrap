@@ -45,7 +45,7 @@ class GeeniController extends BaseController {
         View::make('geeni/geeni_edit.html', array('attributes'=> $geeni));
     }
     public static function update($id){
-        $params = $POST_;
+        $params = $_POST;
         
         $attributes = array(
             'id' => $id,
@@ -60,7 +60,7 @@ class GeeniController extends BaseController {
         if(count($errors)>0){
             View::make('geeni/geeni_edit.html', array('errors'=>$errors, 'attributes'=>$attributes, 'geeni' =>$geeni));
         }else{
-            $geeni->update();
+            $geeni->update($id);
             Redirect::to('/geeni/' . $geeni->id, array('message'=>'Muokkaus onnistui'));
         }   
         //Viesti ei näy!

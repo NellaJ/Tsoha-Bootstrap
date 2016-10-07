@@ -6,6 +6,7 @@ class Sairaus extends BaseModel{
     //Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_name', 'validate_mutations', 'validate_genes', 'validate_date');
     }
     
     public static function all(){
@@ -24,7 +25,7 @@ class Sairaus extends BaseModel{
         }
         return $sairaudet;
     }
-    //Hakee geenin id:n perusteella
+
     public static function find($id){
         $query = DB::connection()->prepare('SELECT * FROM Sairaus WHERE id = :id LIMIT 1');
         $query->execute(array('id' => $id));
@@ -48,6 +49,50 @@ class Sairaus extends BaseModel{
         $query->execute(array('nimi'=> $this->nimi, 'geenit'=>  $this->geenit,'mutaatiot'=>$this->mutaatiot, 'lisayspvm'=> $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
+    }
+    
+    public function update($id) {
+        $query = DB::connection()->prepare('UPDATE Sairaus SET nimi = :nimi, geenit = :geenit, mutaatiot = :mutaatiot, lisayspvm = :lisayspvm WHERE id=:id');
+        $query->execute(array('id'=>  $this->id, 'nimi'=>  $this->nimi, 'geenit'=>  $this->geenit, 'mutaatiot'=>  $this->mutaatiot, 'lisayspvm'=>  $this->lisayspvm));
+        $row = $query->fetch();
+        $this->id = $row['id'];
+    }
+    
+    public function destroy($id) {
+        $query = DB::connection()->prepare('DELETE FROM Sairaus WHERE id=:id');
+        $query->execute(array('id'=>$id));
+    }
+    
+    public function validate_name() {
+        $errors = array();
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Nimi ei saa olla tyhjä!';
+        }
+        return $errors;                
+    }
+    
+    public function validate_genes() {
+        $errors = array();
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Geenin nimi ei saa olla tyhjä!';
+        }
+        return $errors;  
+    }
+    
+    public function validate_mutations() {
+        $errors = array();
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Mutaatio ei saa olla tyhjä!';
+        }
+        return $errors; 
+    }
+    
+    public function validate_date() {
+        $errors = array();
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Päivämäärä ei saa olla tyhjä!';
+        }
+        return $errors; 
     }
 }
     

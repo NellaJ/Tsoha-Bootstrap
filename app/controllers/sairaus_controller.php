@@ -1,27 +1,74 @@
 <?php
 
-class SairausController extends BaseController{
+class SairausController extends BaseController {
+
     public static function index() {
-        //Hakee kaikki geenit tietokannasta
         $sairaudet = Sairaus::all();
         View::make('sairaus/index.html', array('sairaudet' => $sairaudet));
     }
+
     public static function create() {
         View::make('sairaus/new.html');
-        echo "jotain";
     }
-    public static function store(){
+
+    public static function store() {
+        $params = $_POST;
+
+        $attributes = array(
+            'nimi' => $params['nimi'],
+            'geenit' => $params['geenit'],
+            'mutaatiot' => $params['mutaatiot'],
+            'lisayspvm' => $params['lisayspvm']
+        );
+
+        $sairaus = new Sairaus($attributes);
+        $errors = $sairaus->errors();
+
+        if (count($errors) == 0) {
+            $sairaus->save();
+
+            Redirect::to('/sairaus/' . $sairaus->id, array('message' => "Uusi sairaus lisätty!"));
+        }else{
+            View::make('sairaus/new.html', array('errors' => $errors, 'attributes' => $attributes));
+        }
+    }
+    
+    public static function show($id) {
+        $sairaus = Sairaus::find($id);
+        View::make('sairaus/sairaus_show.html', array('sairaus' => $sairaus));    
+    }
+
+   public static function edit($id) {
+        $sairaus = Sairaus::find($id);
+        View::make('sairaus/sairaus_edit.html', array('attributes' => $sairaus));    
+    }
+    
+    public static function update($id) {
         $params = $_POST;
         
-        $sairaus = new Sairaus(array(
-                'nimi' => $params['nimi'],
-                'geenit' => $params['geenit'],  
-                'mutaatiot' => $params['mutaatiot'],
-                'lisayspvm' => $params['lisayspvm']
-                ));
-        $sairaus-> save();
-       //Ei oikeasti palaa minnekään kun ei mene minnekään
-    }
-  
+        $attributes = array(
+            'nimi' => $params['nimi'],
+            'geenit' => $params['geenit'],
+            'mutaatiot' => $params['mutaatiot'],
+            'lisayspvm' => $params['lisayspvm']
+        );
 
+        $sairaus = new Sairaus($attributes);
+        $errors = $sairaus->errors();
+
+        if (count($errors)>0) {
+            View::make('sairaus/sairaus_edit.html', array('errors'=>$errors, 'attributes'=>$attributes, 'sairaus'=>$sairaus));
+            }else{ 
+             $sairaus->update($id);
+             Redirect::to('/sairaus/' . $sairaus->id, array('message'=>'Muokkaus onnistui!'));
+                }
+    }
+    
+    public static function destroy($id) {
+        $sairaus = new Sairaus(array('id'=>$id));
+        $sairaus->destroy($id);
+        
+        Redirect::to('/sairaus', array('message' => 'Poistettu!'));    
+    }
+    
 }

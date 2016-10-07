@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{sairaus.nimi}}</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Geeni</th>
+            <th>Mutaatio</th>
+            <th>Lisätty (pvm)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{{sairaus.id}}</td>
+            <td>{{sairaus.geenit}}</td>
+            <td>{{sairaus.mutaatiot}}</td>
+            <td>{{sairaus.lisayspvm}}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
