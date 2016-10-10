@@ -16,7 +16,14 @@
 
 
 --INSERT INTO Mutaatio (sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Arg1644His', 'OK', '090906', 7, 9);
---Mutaatiotaulu hankala
---Miten viitata geeniin ja sairauteen? Ylläolevat numerot otettu olemassaolevista
---tauluista, geenin id esim. Ne pitäisi hakea jotenkin.
---Ja siis näkyy näkymässä numeroina
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Trp66Gly', 'Patogeeninen', '2016-10-10', 'LDLR', 'Familiaalinen hyperkolesterolemia');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Glu207Lys', 'Patogeeninen', '2016-10-10', 'LDLR', 'Familiaalinen hyperkolesterolemia');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Ala410Thr', 'Patogeeninen', '2016-10-10', 'LDLR', 'Familiaalinen hyperkolesterolemia');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Arg453Trp', 'Patogeeninen', '2016-10-10', 'LMNA', 'EDMD');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Leu84Arg', 'Patogeeninen', '2016-10-10', 'LMNA', 'Kardiomyopatia');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Arg377His', 'Patogeeninen', '2016-10-10', 'LMNA', 'LGMD');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Gly608Gly', 'Patogeeninen', '2016-10-10', 'LMNA', 'Progeria');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Ala178Pro', 'Patogeeninen', '2016-10-10', 'KCNQ1', 'Pitkä-QT-Syndrooma');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Ala561Val', 'Patogeeninen', '2016-10-10', 'LMNA', 'Pitkä-QT-Syndrooma');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Asn1325Ser', 'Patogeeninen', '2016-10-10', 'LMNA', 'Pitkä-QT-Syndrooma');
+INSERT INTO Mutaatio(sijainti, tyyppi, lisayspvm, geeni, sairaus) VALUES ('Arg1788Trp', 'Patogeeninen', '2016-10-10', 'LMNA', 'Pitkä-QT-Syndrooma');
