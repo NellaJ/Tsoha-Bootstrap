@@ -69,12 +69,13 @@ $routes->post('/geeni/:id/destroy', function($id) {
 $routes->get('/sairaus', function() {
     SairausController::index();
 });
-$routes->get('/sairaus/:id', function($id) {
-    SairausController::show($id);
-});
 
 $routes->get('/sairaus/new', function() {
     SairausController::create();
+});
+
+$routes->get('/sairaus/:id', function($id) {
+    SairausController::show($id);
 });
 
 $routes->post('/sairaus', function() {
@@ -98,4 +99,27 @@ $routes->get('/login', function() {
 });
 $routes->post('/login', function() {
     UserController::handle_login();
+});
+
+$routes->get('/mutaatio', function() {
+    MutaatioController::index();
+});
+$routes->get('/mutaatio/new', function() {
+    MutaatioController::create();
+});
+$routes->get('/mutaatio/:id', function($id) {
+    MutaatioController::show($id);
+});
+$routes->post('/mutaatio', function() {
+    MutaatioController::store();
+});
+$routes->get('/mutaatio/:id/edit', function($id) {
+    MutaatioController::edit($id);
+});
+$routes->post('/mutaatio/:id/edit', function($id) {
+    MutaatioController::update($id);
+});
+
+$routes->post('/mutaatio/:id/destroy', function($id) {
+    MutaatioController::destroy($id);
 });

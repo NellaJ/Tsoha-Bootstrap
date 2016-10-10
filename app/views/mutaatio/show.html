@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{mutaatio.geeni}}  {{mutaatio.sijainti}}</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Sijainti</th>
+            <th>Tyyppi</th>
+            <th>Geeni</th>
+            <th>Sairaus</th>
+            <th>Lisätty (pvä)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+           <td>{{mutaatio.sijainti}}</td>
+            <td>{{mutaatio.tyyppi}}</td>
+            <td>{{mutaatio.geeni}}</td>
+            <td>{{mutaatio.sairaus}}</td>
+            <td>{{mutaatio.lisayspvm}}</td>
+        </tr>
+    </tbody>
+    <td><a class="btn btn-link btn-lg" href="{{base_path}}/mutaatio">Mutaatiot</td>
+</table>
+{% endblock %}

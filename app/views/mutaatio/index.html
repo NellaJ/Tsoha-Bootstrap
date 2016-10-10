@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Mutaatiot</h1>
+<p>
+    <a href="{{base_path}}/mutaatio/new" class="btn btn-success">Lisää uusi mutaatio</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Linkki</th>
+            <th>Sijainti</th>
+            <th>Tyyppi</th>
+            <th>Geeni</th>
+            <th>Sairaus</th>
+            <th>Lisätty (pvm)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for mutaatio in mutaatiot %}
+        <tr>
+            <td><a href="{{base_path}}/mutaatio/{{mutaatio.id}}">{{mutaatio.id}} </td>
+            <td>{{mutaatio.sijainti}}</td>
+            <td>{{mutaatio.tyyppi}}</td>
+            <td>{{mutaatio.geeni}}</td>
+            <td>{{mutaatio.sairaus}}</td>
+            <td>{{mutaatio.lisayspvm}}</td>
+            <td><a class="btn btn-info" href="{{base_path}}/mutaatio/{{mutaatio.id}}/edit">Muokkaa</td>
+            <td><form method="post" action="{{base_path}}/mutaatio/{{mutaatio.id}}/destroy" style="display: inline-block";>
+                    <button type="submit" class="btn btn-danger">Poista</button>
+                </form></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

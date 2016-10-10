@@ -95,7 +95,7 @@ class Mutaatio extends BaseModel {
     public function validate_disease() {
         $errors = array();
         if ($this->sairaus == '' || $this->sairaus == null) {
-            $errors[] = 'Ei saa olla tyhjä!';
+            $errors[] = 'Sairaus ei saa olla tyhjä!';
         }
         return $errors;
     }
