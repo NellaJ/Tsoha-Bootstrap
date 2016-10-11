@@ -32,9 +32,7 @@ $routes->get('/muokkaussivu', function() {
     HelloWorldController::muokkaussivu();
 });
 
-$routes->get('/rekisteroitymissivu', function() {
-    HelloWorldController::rekisteroitymissivu();
-});
+
 
 $routes->get('/sairaustulossivu', function() {
     HelloWorldController::sairaustulossivu();
@@ -107,6 +105,13 @@ $routes->post('/login', function() {
 
 $routes->post('/logout', function(){
     UserController::logout();
+});
+
+$routes->get('/rekisteroitymissivu', function() {
+    UserController::rekisteroitymissivu();
+});
+$routes->post('/rekisteroitymissivu', function() {
+    UserController::store();
 });
 
 $routes->get('/mutaatio', function() {

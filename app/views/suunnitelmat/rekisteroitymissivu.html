@@ -1,31 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 <h1> Rekisteröidy! </h1>
+<!--error-viestit eivät näy-->
+{% if error %}
+<div class="alert alert-danger">
+    <!--Punakynää error-jutussa! -->
+    <ul>
+       {% for error in errors %}
+       <li>{{error}}</li>
+       {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
+    </ul>
+</div>
+{% endif %}
 
-<!-- Lomakekenttiä henkilön tiedoille -->
-<form>
+<form method="post" action="{{base_path}}/rekisteroitymissivu">
     <div class="form-group">
-        <label>Etunimi</label>
-        <input class="form-control" type="text">
+        <label>Käyttäjätunnus</label>
+        <input name="nimi" class="form-control" value="{{attributes.nimi}}" type="text">
     </div>
     <div class="form-group">
-        <label>Sukunimi</label>
-        <input class="form-control" type="text">
+        <label>Salasana (min. 5 merkkiä)</label>
+        <input name="salasana" class="form-control" value="{{attributes.salasana}}" type="password">
     </div>
     <div class="form-group">
         <label>E-mail</label>
-        <input class="form-control" type="email">
+        <input name="email" class="form-control" value="{{attribtues.email}}" type="email">
     </div>
     <div class="form-group">
-        <label>Käyttäjätunnus</label>
-        <input class="form-control" type="text">
+    <button type="submit" class="btn btn-primary">Rekisteröidy</button>
     </div>
-    <div class="form-group">
-        <label>Salasana</label>
-        <input class="form-control" type="password">
-    </div>
-    <!--Salasana uudelleen & tarkistus? -->
-    <button type="button" class="btn btn-success">Rekisteröidy</button>
 </form>
 
 {% endblock %}

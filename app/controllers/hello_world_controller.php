@@ -39,9 +39,7 @@ class HelloWorldController extends BaseController{
         View::make('suunnitelmat/muokkaussivu.html');
     }
     
-    public static function rekisteroitymissivu() {
-        View::make('suunnitelmat/rekisteroitymissivu.html');
-    }
+    
     public static function sairaustulossivu() {
         View::make('suunnitelmat/sairaustulossivu.html');
     }
