@@ -1,5 +1,9 @@
 <?php
 
+function check_logged_in(){
+    BaseController::check_logged_in();
+}
+
 $routes->get('/', function() {
     HelloWorldController::esittely();
 });
@@ -44,14 +48,14 @@ $routes->get('/geeni', function() {
     GeeniController::index();
 });
 
-$routes->get('/geeni/:id/edit', function($id) {
+$routes->get('/geeni/:id/edit', 'check_logged_in',function($id) {
     GeeniController::edit($id);
 });
-$routes->post('/geeni/:id/edit', function($id) {
+$routes->post('/geeni/:id/edit', 'check_logged_in',function($id) {
     GeeniController::update($id);
 });
 
-$routes->get('/geeni/new', function() {
+$routes->get('/geeni/new', 'check_logged_in',function() {
     GeeniController::create();
 });
 $routes->get('/geeni/:id', function($id) {
@@ -62,7 +66,7 @@ $routes->post('/geeni', function() {
     GeeniController::store();
 });
 
-$routes->post('/geeni/:id/destroy', function($id) {
+$routes->post('/geeni/:id/destroy', 'check_logged_in',function($id) {
     GeeniController::destroy($id);
 });
 
@@ -70,11 +74,11 @@ $routes->get('/sairaus', function() {
     SairausController::index();
 });
 
-$routes->get('/sairaus/new', function() {
+$routes->get('/sairaus/new', 'check_logged_in',function() {
     SairausController::create();
 });
 
-$routes->get('/sairaus/:id', function($id) {
+$routes->get('/sairaus/:id', 'check_logged_in',function($id) {
     SairausController::show($id);
 });
 
@@ -82,15 +86,15 @@ $routes->post('/sairaus', function() {
     SairausController::store();
 });
 
-$routes->get('/sairaus/:id/edit', function($id) {
+$routes->get('/sairaus/:id/edit', 'check_logged_in',function($id) {
     SairausController::edit($id);
 });
 
-$routes->post('/sairaus/:id/edit', function($id) {
+$routes->post('/sairaus/:id/edit', 'check_logged_in',function($id) {
     SairausController::update($id);
 });
 
-$routes->post('/sairaus/:id/destroy', function($id) {
+$routes->post('/sairaus/:id/destroy', 'check_logged_in',function($id) {
     SairausController::destroy($id);
 });
 
@@ -101,25 +105,29 @@ $routes->post('/login', function() {
     UserController::handle_login();
 });
 
+$routes->post('/logout', function(){
+    UserController::logout();
+});
+
 $routes->get('/mutaatio', function() {
     MutaatioController::index();
 });
-$routes->get('/mutaatio/new', function() {
+$routes->get('/mutaatio/new', 'check_logged_in',function() {
     MutaatioController::create();
 });
-$routes->get('/mutaatio/:id', function($id) {
+$routes->get('/mutaatio/:id', 'check_logged_in',function($id) {
     MutaatioController::show($id);
 });
 $routes->post('/mutaatio', function() {
     MutaatioController::store();
 });
-$routes->get('/mutaatio/:id/edit', function($id) {
+$routes->get('/mutaatio/:id/edit', 'check_logged_in',function($id) {
     MutaatioController::edit($id);
 });
-$routes->post('/mutaatio/:id/edit', function($id) {
+$routes->post('/mutaatio/:id/edit', 'check_logged_in',function($id) {
     MutaatioController::update($id);
 });
 
-$routes->post('/mutaatio/:id/destroy', function($id) {
+$routes->post('/mutaatio/:id/destroy', 'check_logged_in',function($id) {
     MutaatioController::destroy($id);
 });

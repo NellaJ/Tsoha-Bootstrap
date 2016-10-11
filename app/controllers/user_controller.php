@@ -20,5 +20,10 @@ class UserController extends BaseController {
             //Viesti ei näy!
         }
     }
+    
+    public static function logout() {
+        $_SESSION['kayttaja'] = null;
+        Redirect::to('/login', array('message' => 'Olet kirjautunut ulos!'));
+    }
 
 }
