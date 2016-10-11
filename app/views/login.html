@@ -2,13 +2,20 @@
 {% block content %}
 <h1> Kirjaudu sisään </h1>
 
-{% if errors %}
+{% if error %}
 <div class="alert alert-danger">
     <!--Punakynää error-jutussa! -->
     <ul>
        {% for error in errors %}
        <li>{{error}}</li>
        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
     </ul>
 </div>
 {% endif %}

@@ -71,7 +71,7 @@ class MutaatioController extends BaseController {
         $mutaatio = new Mutaatio(array('id' => $id));
         $mutaatio->destroy($id);
         
-        Redirect::to('/mutaatio', array('message' => "Poistettu!"));
+        Redirect::to('/mutaatio', array('message' => "Mutaatio on poistettu!"));
     }
 
 }
