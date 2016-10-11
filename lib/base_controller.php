@@ -5,7 +5,7 @@
     public static function get_user_logged_in(){
         if(isset($_SESSION['kayttaja'])){
             $kayttaja_id = $_SESSION['kayttaja'];
-            $kayttaja = Kayttaja::find($id);
+            $kayttaja = Kayttaja::find($_kayttaja_id);
             
             return $kayttaja;
         }

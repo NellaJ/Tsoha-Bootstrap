@@ -2,10 +2,10 @@
 
 class Mutaatio extends BaseModel {
 
-    //Attribuutit
+//Attribuutit
     public $id, $sijainti, $tyyppi, $geeni, $sairaus, $lisayspvm;
 
-    //Konstruktori
+//Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
         $this->validators = array('validate_position', 'validate_type', 'validate_gene', 'validate_disease', 'validate_date');
@@ -16,6 +16,7 @@ class Mutaatio extends BaseModel {
         $query->execute();
         $rows = $query->fetchAll();
         $mutaatiot = array();
+
         foreach ($rows as $row) {
             $mutaatiot[] = new Mutaatio(array(
                 'id' => $row['id'],
@@ -50,14 +51,14 @@ class Mutaatio extends BaseModel {
 
     public function save() {
         $query = DB::connection()->prepare('INSERT INTO Mutaatio (sijainti, tyyppi, geeni, sairaus, lisayspvm) VALUES (:sijainti, :tyyppi, :geeni, :sairaus, :lisayspvm) RETURNING id');
-        $query->execute(array('sijainti' => $this->sijainti, 'tyyppi'=>  $this->tyyppi, 'geeni'=>  $this->geeni,'sairaus' => $this->sairaus, 'lisayspvm' => $this->lisayspvm));
+        $query->execute(array('sijainti' => $this->sijainti, 'tyyppi' => $this->tyyppi, 'geeni' => $this->geeni, 'sairaus' => $this->sairaus, 'lisayspvm' => $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
 
     public function update($id) {
         $query = DB::connection()->prepare('UPDATE Mutaatio SET sijainti = :sijainti, tyyppi = :tyyppi, geeni = :geeni, sairaus = :sairaus, lisayspvm = :lisayspvm WHERE id=:id');
-        $query->execute(array('sijainti' => $this->sijainti, 'tyyppi'=>  $this->tyyppi, 'geeni'=>  $this->geeni,'sairaus' => $this->sairaus, 'lisayspvm' => $this->lisayspvm));
+        $query->execute(array('sijainti' => $this->sijainti, 'tyyppi' => $this->tyyppi, 'geeni' => $this->geeni, 'sairaus' => $this->sairaus, 'lisayspvm' => $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
@@ -72,7 +73,7 @@ class Mutaatio extends BaseModel {
         if ($this->sijainti == '' || $this->sijainti == null) {
             $errors[] = 'Sijainti ei saa olla tyhjä!';
         }
-        if(strlen($this->sijainti)<7){
+        if (strlen($this->sijainti) < 7) {
             $errors[] = 'Sijainnin kirjoitusasu on väärin!';
         }
         return $errors;
@@ -80,9 +81,10 @@ class Mutaatio extends BaseModel {
 
     public function validate_type() {
         $errors = array();
-        
+
         return $errors;
     }
+
     public function validate_gene() {
         $errors = array();
         if ($this->geeni == '' || $this->geeni == null) {
@@ -90,7 +92,6 @@ class Mutaatio extends BaseModel {
         }
         return $errors;
     }
-
 
     public function validate_disease() {
         $errors = array();
@@ -100,7 +101,7 @@ class Mutaatio extends BaseModel {
         return $errors;
     }
 
-    //Päivämäärän osalta lisää/toisenlainen toteutus
+//Päivämäärän osalta lisää/toisenlainen toteutus
     public function validate_date() {
         $errors = array();
         if ($this->lisayspvm == '' || $this->lisayspvm == null) {
