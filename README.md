@@ -6,17 +6,14 @@ Yleisiä linkkejä:
 
 * [Linkki dokumentaatiooni](https://github.com/NellaJ/Tsoha-Bootstrap/blob/master/doc/Dokumentaatio2109.pdf)
 
-* [Linkki sivuun, jossa listataan kaikki tietokannan mutaatiot](https://junna.users.cs.helsinki.fi/tsoha/mutaatio)
-
-Lisää -linkistä voi lisätä uuden mutaation.
+Mutaatiot-linkistä pääsee näkymään, jossa on kaikki tietokannan mutaatiot. Lisää -linkistä voi lisätä uuden mutaation.
 Muokkaa-napista periaatteessa voisi muokata olemassa olevaa, mutta se itseasiassa luo täysin uuden (korjaus ei ole onnistunut).
-Poista-nappi poistaa kohteen.
+Poista-nappi poistaa kohteen. Lisääminen, muokkaaminen ja poistaminen vaativat kirjautumisen.
 
-* [Linkki kirjautumissivuun](http://junna.users.cs.helsinki.fi/tsoha/login)
-Oikeilla tunnuksilla kirjautuessa vie etusivulle (jossa ei ole mitään atm), mutta ei näytä tervetuloa-viestiä (eivät kyllä mitkään muutkaan viestit missään näy).
-Väärillä tunnuksilla error-viesti ei tule näkyviin, jättää kirjautumissivulle. (Korjausyritykset epäonnistuivat). Kirjautuminen saattaa johtaa muihinkin häiriötiloihin. 
+Login-linkistä sisään kirjautumiseen. Oikeilla tunnuksilla kirjautuessa vie etusivulle.
+Yläreunassa on myös rekisteröitymislinkki, josta voi luoda uuden tunnuksen.
 
-UPDATE: Kirjautuminen oikeilla tunnuksilla johtaa error-sivuun ainakin kaikilla selaimilla ja tietokoneilla, joita olen kokeillut. (Syy tuntematon, jossain vaiheessa toimi).
+Geeni- ja sairauslinkit sivuineen työn & mietinnän alla.
 
 Tunnus: Testi
 
