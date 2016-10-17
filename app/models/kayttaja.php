@@ -2,10 +2,8 @@
 
 class Kayttaja extends BaseModel {
 
-//Attribuutit
     public $id, $nimi, $salasana, $email;
 
-//Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
         $this->validators = array('validate_name', 'validate_password', 'validate_email');
@@ -67,19 +65,6 @@ class Kayttaja extends BaseModel {
         $this->id = $row['id'];
     }
 
-//public function update($id) {
-//$query = DB::connection()->prepare('UPDATE Geeni SET nimi = :nimi, mutaatiot = :mutaatiot, sairaudet = :sairaudet, lisayspvm = :lisayspvm WHERE id=:id');
-//$query->execute(array('id' => $this->id, 'nimi' => $this->nimi, 'mutaatiot' => $this->mutaatiot, 'sairaudet' => $this->sairaudet, 'lisayspvm' => $this->lisayspvm));
-//$row = $query->fetch();
-//$this->id = $row['id'];
-//
-//}
-//
-//public function destroy($id) {
-//$query = DB::connection()->prepare('DELETE FROM Geeni WHERE id=:id');
-//$query->execute(array('id' => $id));
-//}
-//
     public function validate_name() {
         $errors = array();
         if ($this->nimi == '' || $this->nimi == null) {

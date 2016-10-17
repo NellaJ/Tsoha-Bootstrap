@@ -9,7 +9,6 @@ class UserController extends BaseController {
     public static function handle_login() {
         $params = $_POST;
         $kayttaja = Kayttaja::authenticate($params['nimi'], $params['salasana']);
-//Väärällä tulee punainen laatikko ilman tekstiä, tyhjentää kentät
         if (!$kayttaja) {
             View::make('/login.html', array('error' => 'Väärä käyttäjätunnus tai salasana!', 'nimi' => $params['nimi']));
         }else{

@@ -2,8 +2,15 @@
 {% block content %}
 <h1>Geenit</h1>
 <!--Listaa kaikki tietokannassa olevat geenit -->
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
+    </ul>
+</div>
+{% endif %}
 <p>
-    <a href="{{base_path}}/geeni/new" class="btn btn-success">Lisää geeni</a>
+    <a href="{{base_path}}/geeni/new" class="btn btn-success">Lisää uusi geeni</a>
 </p>
 
 <table class="table">
@@ -15,7 +22,7 @@
             <th>Nimi</th>
             <th>Sairaudet</th>
             <th>Kuvaus</th>
-            <th>Lisätty (pvä)</th>
+            <th>Lisätty (pvm)</th>
         </tr>
     </thead>
 
@@ -30,7 +37,7 @@
             <td>{{geeni.kuvaus}}</td>
             <td>{{geeni.lisayspvm}}</td>
             <td><a class="btn btn-primary" href="{{base_path}}/geeni/{{geeni.id}}/edit">Muokkaa</td>
-            <td><form method="post" action="{{base_path}}/geeni/{{geeni.id}}/destroy" style="display: inline-block";>
+            <td><form method="post" action="{{base_path}}/geeni/{{geeni.id}}/destroy" class="destroy-form" data-confirm="Oletko varma, että haluat poistaa geenin?">
                     <button type="submit" class="btn btn-danger">Poista</button>
                 </form></td>
         </tr>

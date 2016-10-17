@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Sairaudet</h1>
+
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
+    </ul>
+</div>
+{% endif %}
+
 <p>
-    <a href="{{base_path}}/sairaus/new" class="btn btn-success">Lisää sairaus</a>
+    <a href="{{base_path}}/sairaus/new" class="btn btn-success">Lisää uusi sairaus</a>
 </p>
 
 <table class="table">
@@ -29,7 +38,7 @@
             <td>{{sairaus.kuvaus}}</td>
             <td>{{sairaus.lisayspvm}}</td>
             <td><a class="btn btn-primary" href="{{base_path}}/sairaus/{{sairaus.id}}/edit">Muokkaa</td>
-            <td><form method="post" action="{{base_path}}/sairaus/{{sairaus.id}}/destroy" style="display: inline-block">
+            <td><form method="post" action="{{base_path}}/sairaus/{{sairaus.id}}/destroy" class="destroy-form" data-confirm="Oletko varma, että haluat poistaa sairauden?">
                     <button type="submit" class="btn btn-danger">Poista</button>
                 </form></td>
         </tr>

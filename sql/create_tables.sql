@@ -5,13 +5,6 @@
   email varchar(50) NOT NULL
   );
 
---Näkyy nettisivulla, vanhasta jäänyt
---CREATE TABLE Yllapitaja(
---id SERIAL PRIMARY KEY,
---nimi varchar(50) NOT NULL,
---salasana varchar(50) NOT NULL,
---email varchar(50) NOT NULL
---);
 CREATE TABLE Sairaus(
  id SERIAL PRIMARY KEY,
  lyhenne varchar(10),

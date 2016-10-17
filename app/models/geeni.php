@@ -2,10 +2,8 @@
 
 class Geeni extends BaseModel {
 
-    //Attribuutit
     public $id, $nimi, $kokonimi, $sairaudet, $kuvaus, $lisayspvm;
 
-    //Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
         $this->validators = array('validate_name', 'validate_date');
@@ -82,5 +80,4 @@ class Geeni extends BaseModel {
         }
         return $errors;
     }
-
 }

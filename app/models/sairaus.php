@@ -2,10 +2,8 @@
 
 class Sairaus extends BaseModel {
 
-    //Attribuutit
     public $id, $nimi, $lyhenne, $geenit, $kuvaus, $lisayspvm;
 
-    //Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
         $this->validators = array('validate_name', 'validate_date');

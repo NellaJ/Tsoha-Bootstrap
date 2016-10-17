@@ -32,8 +32,6 @@ $routes->get('/muokkaussivu', function() {
     HelloWorldController::muokkaussivu();
 });
 
-
-
 $routes->get('/sairaustulossivu', function() {
     HelloWorldController::sairaustulossivu();
 });
@@ -99,6 +97,7 @@ $routes->post('/sairaus/:id/destroy', 'check_logged_in',function($id) {
 $routes->get('/login', function() {
     UserController::login();
 });
+
 $routes->post('/login', function() {
     UserController::handle_login();
 });
@@ -110,6 +109,7 @@ $routes->post('/logout', function(){
 $routes->get('/rekisteroitymissivu', function() {
     UserController::rekisteroitymissivu();
 });
+
 $routes->post('/rekisteroitymissivu', function() {
     UserController::store();
 });
@@ -117,18 +117,23 @@ $routes->post('/rekisteroitymissivu', function() {
 $routes->get('/mutaatio', function() {
     MutaatioController::index();
 });
+
 $routes->get('/mutaatio/new', 'check_logged_in',function() {
     MutaatioController::create();
 });
+
 $routes->get('/mutaatio/:id', 'check_logged_in',function($id) {
     MutaatioController::show($id);
 });
+
 $routes->post('/mutaatio', function() {
     MutaatioController::store();
 });
+
 $routes->get('/mutaatio/:id/edit', 'check_logged_in',function($id) {
     MutaatioController::edit($id);
 });
+
 $routes->post('/mutaatio/:id/edit', 'check_logged_in',function($id) {
     MutaatioController::update($id);
 });

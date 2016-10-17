@@ -28,7 +28,7 @@ class MutaatioController extends BaseController {
         if (count($errors) == 0) {
             $mutaatio->save();
 
-            Redirect::to('/mutaatio/' . $mutaatio->id, array('message' => 'Lisätty'));
+            Redirect::to('/mutaatio/' . $mutaatio->id, array('message' => 'Mutaatio on lisätty'));
         } else {
             View::make('geeni/new.html', array('errors' => $errors, 'attributes' => $attributes));
         }
@@ -66,11 +66,11 @@ class MutaatioController extends BaseController {
             View::make('geeni/edit.html', array('errors' => $errors, 'attributes' => $attributes, 'mutaatio' => $mutaatio));
         }
     }
-    
-     public static function destroy($id) {
+
+    public static function destroy($id) {
         $mutaatio = new Mutaatio(array('id' => $id));
         $mutaatio->destroy($id);
-        
+
         Redirect::to('/mutaatio', array('message' => "Mutaatio on poistettu!"));
     }
 

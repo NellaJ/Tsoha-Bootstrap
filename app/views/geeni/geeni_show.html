@@ -2,10 +2,17 @@
 {% block content %}
 <h1>{{geeni.nimi}}</h1>
 
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
+    </ul>
+</div>
+{% endif %}
+
 <table class="table">
     <thead>
         <tr>
-            <th>id</th>
             <th>Sairaudet</th>
             <th>Kuvaus</th>
             <th>Lisätty (pvä)</th>
@@ -14,7 +21,6 @@
 
     <tbody>
         <tr>
-            <td>{{geeni.id}}</td>
             <td>{{geeni.sairaudet}}</td>
             <td>{{geeni.kuvaus}}</td>
             <td>{{geeni.lisayspvm}}</td>

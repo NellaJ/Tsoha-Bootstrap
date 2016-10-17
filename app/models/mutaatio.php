@@ -2,10 +2,8 @@
 
 class Mutaatio extends BaseModel {
 
-//Attribuutit
     public $id, $sijainti, $tyyppi, $geeni, $sairaus, $lisayspvm;
 
-//Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
         $this->validators = array('validate_position', 'validate_type', 'validate_gene', 'validate_disease', 'validate_date');
@@ -101,7 +99,6 @@ class Mutaatio extends BaseModel {
         return $errors;
     }
 
-//Päivämäärän osalta lisää/toisenlainen toteutus
     public function validate_date() {
         $errors = array();
         if ($this->lisayspvm == '' || $this->lisayspvm == null) {

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<h1> Muokkaussivu </h1>
-<h2> <small>Muokkaa Mutaation tietoja</small></h2>
+<h1> Muokkaus </h1>
+<h2> <small>Muokkaa mutaation tietoja</small></h2>
 
 {% if errors %}
 <div class="alert alert-danger">
@@ -13,13 +13,14 @@
     </ul>
 </div>
 {% endif %}
+
 <form method="post" action="{{base_path}}/mutaatio">
     <div class="form-group">
-        <label>Sijainti</label>
+        <label>Sijainti (aminohappopositio, esim. Arg123Leu)</label>
         <input name ="sijainti" class="form-control" value= "{{attributes.sijainti}}" type="text">
     </div>
     <div class="form-group">
-        <label>Tyyppi</label>
+        <label>Tyyppi (esim. patogeeninen tai harmiton)</label>
         <input name="tyyppi" class="form-control" value="{{attributes.tyyppi}}" type="text">
     </div>
      <div class="form-group">
@@ -31,11 +32,9 @@
         <input name="sairaus" class="form-control" value="{{attributes.sairaus}}" type="text">
     </div>
     <div class="form-group">
-        <label>Pvm</label>
-        <input name="lisayspvm" class="form-control" value="{{attributes.lisayspvm}}" type="text">
+        <label>Pvm (YYYY-MM-DD)</label>
+        <input name="lisayspvm" class="form-control" value="{{attributes.lisayspvm}}" type="date">
     </div>
 
-    <button type="submit" class="btn btn-success">Tallenna</button>
-    <button type="submit" class="btn btn-default">Peruuta</button>
-  
+    <button type="submit" class="btn btn-success">Tallenna</button>  
 {% endblock %}

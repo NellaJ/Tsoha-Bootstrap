@@ -2,6 +2,14 @@
 {% block content %}
 <h1>{{sairaus.nimi}} ( {{sairaus.lyhenne}} )</h1>
 
+{% if message %}
+<div class="alert alert-success">
+    <ul>
+        <li>{{message}}</li>
+    </ul>
+</div>
+{% endif %}
+
 <table class="table">
     <thead>
         <tr>

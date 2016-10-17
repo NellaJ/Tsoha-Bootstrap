@@ -3,20 +3,10 @@
 class HelloWorldController extends BaseController{
 
     public static function index(){
-   	  echo 'Tämä on etusivu!';
     }
 
     public static function sandbox(){
       // Testaa koodiasi täällä
-      $diu = new Geeni(array(
-          'nimi' => '',
-          'mutaatiot' => 'aa',
-          'sairaudet' => 'oo',
-          'lisayspvm' => ''
-      ));
-      $errors = $diu->errors();
-      
-      Kint::dump($errors);
     }
     
     public static function esittely(){
@@ -38,7 +28,6 @@ class HelloWorldController extends BaseController{
     public static function muokkaussivu() {
         View::make('suunnitelmat/muokkaussivu.html');
     }
-    
     
     public static function sairaustulossivu() {
         View::make('suunnitelmat/sairaustulossivu.html');

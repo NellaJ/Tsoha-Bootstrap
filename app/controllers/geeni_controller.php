@@ -15,11 +15,11 @@ class GeeniController extends BaseController {
         $params = $_POST;
 
         $attributes = array(
-        'nimi' => $params['nimi'],
-        'kokonimi' => $params['kokonimi'],
-        'sairaudet' => $params['sairaudet'],
-        'kuvaus' => $params['kuvaus'],
-        'lisayspvm' => $params['lisayspvm']
+            'nimi' => $params['nimi'],
+            'kokonimi' => $params['kokonimi'],
+            'sairaudet' => $params['sairaudet'],
+            'kuvaus' => $params['kuvaus'],
+            'lisayspvm' => $params['lisayspvm']
         );
 
         $geeni = new Geeni($attributes);
@@ -28,7 +28,7 @@ class GeeniController extends BaseController {
         if (count($errors) == 0) {
             $geeni->save();
 
-            Redirect::to('/geeni/' . $geeni->id, array('message' => "Lisätty on"));
+            Redirect::to('/geeni/' . $geeni->id, array('message' => "Uusi geeni on lisätty!"));
         } else {
             View::make('geeni/new.html', array('errors' => $errors, 'attributes' => $attributes));
         }
@@ -70,7 +70,7 @@ class GeeniController extends BaseController {
         $geeni = new Geeni(array('id' => $id));
         $geeni->destroy($id);
 
-        Redirect::to('/geeni', array('message' => 'Poistettu!'));
+        Redirect::to('/geeni', array('message' => 'Geeni on poistettu!'));
     }
-
+   
 }

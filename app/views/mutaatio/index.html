@@ -11,6 +11,7 @@
     </ul>
 </div>
 {% endif %}
+
 <table class="table">
     <thead>
         <tr>
@@ -33,7 +34,7 @@
             <td>{{mutaatio.sairaus}}</td>
             <td>{{mutaatio.lisayspvm}}</td>
             <td><a class="btn btn-primary" href="{{base_path}}/mutaatio/{{mutaatio.id}}/edit">Muokkaa</td>
-            <td><form method="post" action="{{base_path}}/mutaatio/{{mutaatio.id}}/destroy" style="display: inline-block";>
+            <td><form method="post" action="{{base_path}}/mutaatio/{{mutaatio.id}}/destroy" class="destroy-form" data-confirm="Oletko varma, että haluat poistaa mutaation?">
                     <button type="submit" class="btn btn-danger">Poista</button>
                 </form></td>
         </tr>

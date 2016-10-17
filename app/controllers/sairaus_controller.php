@@ -70,7 +70,7 @@ class SairausController extends BaseController {
         $sairaus = new Sairaus(array('id'=>$id));
         $sairaus->destroy($id);
         
-        Redirect::to('/sairaus', array('message' => 'Poistettu!'));    
+        Redirect::to('/sairaus', array('message' => 'Sairaus poistettu!'));    
     }
     
 }

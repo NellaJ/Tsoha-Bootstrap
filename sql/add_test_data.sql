@@ -1,8 +1,6 @@
 INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Testi', 'salasana', 'a@b.fi');
 INSERT INTO Kayttaja (nimi, salasana, email) VALUES ('Tyyppi', 'password', 'email');
 
---INSERT INTO Yllapitaja (nimi, salasana, email) VALUES ('Timppa', '7ye7', 'ab@h.fi');
-
 INSERT INTO Sairaus (nimi,lyhenne,geenit, kuvaus, lisayspvm) VALUES ('Lorvikatarri','LK','LKTR','Tekstiä' ,'090906');
 INSERT INTO Sairaus (nimi,lyhenne,geenit, kuvaus, lisayspvm) VALUES ('Familiaalinen hyperkolesterolemia','FH','LDLR','...' ,'090906');
 INSERT INTO Sairaus (nimi,lyhenne,geenit, kuvaus, lisayspvm) VALUES ('Pitkä-QT-syndrooma','LQTS','SCN5A','Viittaa jonnekin' ,'090906');
