@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{sairaus.nimi}}</h1>
+<h1>{{sairaus.nimi}} ( {{sairaus.lyhenne}} )</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>id</th>
-            <th>Geeni</th>
-            <th>Mutaatio</th>
+            <th>Geenit</th>
+            <th>Kuvaus</th>
             <th>Lisätty (pvm)</th>
         </tr>
     </thead>
@@ -16,7 +16,7 @@
         <tr>
             <td>{{sairaus.id}}</td>
             <td>{{sairaus.geenit}}</td>
-            <td>{{sairaus.mutaatiot}}</td>
+            <td>{{sairaus.kuvaus}}</td>
             <td>{{sairaus.lisayspvm}}</td>
         </tr>
     </tbody>

@@ -3,12 +3,12 @@
 class Geeni extends BaseModel {
 
     //Attribuutit
-    public $id, $nimi, $mutaatiot, $sairaudet, $lisayspvm;
+    public $id, $nimi, $kokonimi, $sairaudet, $kuvaus, $lisayspvm;
 
     //Konstruktori
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_name', 'validate_mutations', 'validate_diseases', 'validate_date');
+        $this->validators = array('validate_name', 'validate_date');
     }
 
     public static function all() {
@@ -20,8 +20,9 @@ class Geeni extends BaseModel {
             $geenit[] = new Geeni(array(
                 'id' => $row['id'],
                 'nimi' => $row['nimi'],
-                'mutaatiot' => $row['mutaatiot'],
+                'kokonimi' => $row['kokonimi'],
                 'sairaudet' => $row['sairaudet'],
+                'kuvaus' => $row['kuvaus'],
                 'lisayspvm' => $row['lisayspvm']
             ));
         }
@@ -37,8 +38,9 @@ class Geeni extends BaseModel {
             $geeni = new Geeni(array(
                 'id' => $row['id'],
                 'nimi' => $row['nimi'],
-                'mutaatiot' => $row['mutaatiot'],
+                'kokonimi' => $row['kokonimi'],
                 'sairaudet' => $row['sairaudet'],
+                'kuvaus' => $row['kuvaus'],
                 'lisayspvm' => $row['lisayspvm']
             ));
             return $geeni;
@@ -47,18 +49,17 @@ class Geeni extends BaseModel {
     }
 
     public function save() {
-        $query = DB::connection()->prepare('INSERT INTO Geeni (nimi, mutaatiot, sairaudet, lisayspvm) VALUES (:nimi, :mutaatiot, :sairaudet, :lisayspvm) RETURNING id');
-        $query->execute(array('nimi' => $this->nimi, 'mutaatiot' => $this->mutaatiot, 'sairaudet' => $this->sairaudet, 'lisayspvm' => $this->lisayspvm));
+        $query = DB::connection()->prepare('INSERT INTO Geeni (nimi, kokonimi, sairaudet, kuvaus,lisayspvm) VALUES (:nimi, :kokonimi, :sairaudet, :kuvaus, :lisayspvm) RETURNING id');
+        $query->execute(array('nimi' => $this->nimi, 'kokonimi' => $this->kokonimi, 'sairaudet' => $this->sairaudet, 'kuvaus' => $this->kuvaus, 'lisayspvm' => $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
 
     public function update($id) {
-        $query = DB::connection()->prepare('UPDATE Geeni SET nimi = :nimi, mutaatiot = :mutaatiot, sairaudet = :sairaudet, lisayspvm = :lisayspvm WHERE id=:id');
-        $query->execute(array('id' => $this->id, 'nimi' => $this->nimi, 'mutaatiot' => $this->mutaatiot, 'sairaudet' => $this->sairaudet, 'lisayspvm' => $this->lisayspvm));
+        $query = DB::connection()->prepare('UPDATE Geeni SET nimi = :nimi, kokonimi = :kokonimi, sairaudet = :sairaudet, kuvaus = :kuvaus, lisayspvm = :lisayspvm WHERE id=:id');
+        $query->execute(array('id' => $this->id, 'nimi' => $this->nimi, 'kokonimi' => $this->kokonimi, 'sairaudet' => $this->sairaudet, 'kuvaus' => $this->kuvaus, 'lisayspvm' => $this->lisayspvm));
         $row = $query->fetch();
         $this->id = $row['id'];
-        
     }
 
     public function destroy($id) {
@@ -74,31 +75,10 @@ class Geeni extends BaseModel {
         return $errors;
     }
 
-    //Tässä voisi olla tarkempia ehtoja
-    public function validate_mutations() {
-        $errors = array();
-        if ($this->mutaatiot == '' || $this->mutaatiot == null) {
-            $errors[] = 'Ei saa olla tyhjä!';
-        }
-        if (strlen($this->mutaatiot) < 7) {
-            $errors[] = 'Pituus liian lyhyt';
-        }
-        return $errors;
-    }
-
-    public function validate_diseases() {
-        $errors = array();
-        if ($this->sairaudet == '' || $this->sairaudet == null) {
-            $errors[] = 'Ei saa olla tyhjä!';
-        }
-        return $errors;
-    }
-
-    //Päivämäärän osalta lisää/toisenlainen toteutus
     public function validate_date() {
         $errors = array();
         if ($this->lisayspvm == '' || $this->lisayspvm == null) {
-            $errors[] = 'Ei saa olla tyhjä!';
+            $errors[] = 'Päivämäärä ei saa olla tyhjä!';
         }
         return $errors;
     }

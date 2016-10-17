@@ -5,7 +5,6 @@
 
 {% if errors %}
 <div class="alert alert-danger">
-    <!--Punakynää error-jutussa! -->
     <ul>
        {% for error in errors %}
        <li>{{error}}</li>
@@ -19,15 +18,18 @@
         <label>Nimi</label>
         <input name="nimi" class="form-control" value="{{attributes.nimi}}" type="text">
     </div>
-    
+    <div class="form-group">
+        <label>Lyhenne</label>
+        <input name="lyhenne" class="form-control" value="{{attributes.lyhenne}}" type="text">
+    </div>
     <div class="form-group">
         <label>Geenit</label>
         <input name="geenit" class="form-control" value="{{attributes.geenit}}" type="text">
     </div>
     
     <div class="form-group">
-        <label>Mutaatiot</label>
-        <input name="mutaatiot" class="form-control" value="{{attributes.mutaatiot}}" type="text">
+        <label>Kuvaus</label>
+        <input name="kuvaus" class="form-control" value="{{attributes.kuvaus}}" type="text">
     </div>
     
     <div class="form-group">

@@ -16,8 +16,9 @@ class SairausController extends BaseController {
 
         $attributes = array(
             'nimi' => $params['nimi'],
+            'lyhenne' => $params['lyhenne'],
             'geenit' => $params['geenit'],
-            'mutaatiot' => $params['mutaatiot'],
+            'kuvaus' => $params['kuvaus'],
             'lisayspvm' => $params['lisayspvm']
         );
 
@@ -48,8 +49,9 @@ class SairausController extends BaseController {
         
         $attributes = array(
             'nimi' => $params['nimi'],
+            'lyhenne' => $params['lyhenne'],
             'geenit' => $params['geenit'],
-            'mutaatiot' => $params['mutaatiot'],
+            'kuvaus' => $params['kuvaus'],
             'lisayspvm' => $params['lisayspvm']
         );
 
